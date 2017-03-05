@@ -15,7 +15,6 @@ def getPropBasics_Selenium(element, leaseObj):
     		'lease_terms': 0,
     		'bathrooms': getBathrooms(element)
         }]
-    leaseObj['furnished']: getFurnished(element)
     return leaseObj
 
 def getDate(element):

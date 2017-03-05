@@ -6,14 +6,14 @@ def getPropBasics_NLP(paragraph, leaseObj):
     return leaseObj
 
 def getUtils(paragraph, leaseObj):
-    hydro_and_internet_incl = re.search(r'', paragraph, re.I).group() # hydro and internet included
-    utils_incl_except_hydro = re.search(r'', paragraph, re.I).group() # utilities included, except hydro
-    amenities = re.search(r'', paragraph, re.I).group() # amenities
-    all_utils = re.search(r'', paragraph, re.I).group() # all utilities
-    all_incl = re.search(r'', paragraph, re.I).group() # all inclusive
-    comma_incl = re.search(r'', paragraph, re.I).group() # water, electric, internet included
-    plus_utils = re.search(r'(plus utilities)|(plus utils)', paragraph, re.I).group()   # plus utilities
-    utils_incl = re.search(r'(utilities incl)|(utils incl)', paragraph, re.I).group()   # utilities included
+    # hydro_and_internet_incl = re.search(r'', paragraph, re.I).group() # hydro and internet included
+    # utils_incl_except_hydro = re.search(r'', paragraph, re.I).group() # utilities included, except hydro
+    # amenities = re.search(r'', paragraph, re.I).group() # amenities
+    # all_utils = re.search(r'', paragraph, re.I).group() # all utilities
+    # all_incl = re.search(r'', paragraph, re.I).group() # all inclusive
+    # comma_incl = re.search(r'', paragraph, re.I).group() # water, electric, internet included
+    # plus_utils = re.search(r'(plus utilities)|(plus utils)', paragraph, re.I).group()   # plus utilities
+    # utils_incl = re.search(r'(utilities incl)|(utils incl)', paragraph, re.I).group()   # utilities included
 
     # broad-first search
 

@@ -19,7 +19,7 @@ def beginScript(driver, url, city, property_type):
         leaseObj = {}
         leaseObj = getPropBasics_Selenium(statsTable, leaseObj)
         leaseObj = getPropBasics_NLP(paragraph, leaseObj)
-        leaseObj = demographics(paragraph, leaseObj)
+        leaseObj = getDemographics(paragraph, leaseObj)
         leaseObj = extractImages(page, leaseObj)
         leaseObj = getPropBasics_GPS(googleAPI, leaseObj)
 
