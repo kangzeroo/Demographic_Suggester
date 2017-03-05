@@ -1,0 +1,32 @@
+{
+  "name": "Kijiji_Scrapper_Node_Layer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "forever": "forever start --uid 'node_layer' index.js -- --host:0.0.0.0"
+  },
+  "engines": {
+    "node": "6.9.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "forever": "^0.15.3",
+    "mongoose": "^4.6.1",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.10.2",
+    "q": "^1.4.1",
+    "uuid": "^2.0.3",
+    "googlemaps": "^1.11.1"
+  },
+  "devDependencies": {
+    "json-loader": "^0.5.4",
+    "webpack": "^1.13.3"
+  }
+}

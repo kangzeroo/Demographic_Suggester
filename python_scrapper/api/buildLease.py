@@ -4,12 +4,11 @@ from api.propBasics_Selenium import getPropBasics_Selenium
 from api.propBasics_NLP import getPropBasics_NLP
 from api.demographics import getDemographics
 from api.images import extractImages
-from api.propBasics_GPS import getPropBasics_GPS
 from api.nearby import getNearby
 from api.example_leaseObj import getDefault
+from api.communications import sendOffToNode
 
 page = {}
-googleAPI = {}
 
 # takes 2 args, a driver instance and a query string
 def buildLeaseObj(driver, url, city, property_type):
@@ -28,7 +27,6 @@ def buildLeaseObj(driver, url, city, property_type):
         leaseObj = getNearby(paragraph, leaseObj)
         leaseObj = getDemographics(paragraph, leaseObj)
         leaseObj = extractImages(page, leaseObj)
-        leaseObj = getPropBasics_GPS(googleAPI, leaseObj)
 
         # static set details
         leaseObj['kijiji_link'] = url
@@ -39,7 +37,8 @@ def buildLeaseObj(driver, url, city, property_type):
         leaseObj['core']['property_type'] = 'property_type'
         leaseObj['core']['thumbnail'] = 'https://s3.amazonaws.com/rentburrow-images/ideas%2540bytenectar.io/default_home_icon.png'
         leaseObj['core']['note'] = paragraph.replace('\"', '\'')
-        print(leaseObj)
+        # print(leaseObj)
+        sendOffToNode(leaseObj)
         return leaseObj
     except TimeoutException:
         print('TimeoutException')

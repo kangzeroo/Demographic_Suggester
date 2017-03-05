@@ -1,9 +1,19 @@
 # INSTALLATION STEPS #
 
+### python_scrapper ###
 1. Install andaconda python environment
-2. $ conda install selenium
-3. Add ./geckodriver to $PATH
-4. $ python main.py
+2. $ cd python_scrapper
+3. $ conda install selenium
+4. Add ./geckodriver to $PATH
+5. $ pip install -r ./requirements.txt
+6. $ python main.py
+
+### node_async ###
+1. Install nodeJS & mongoDB
+2. $ mongod --dbpath ./db
+3. $ cd node_async
+4. $ npm install
+5. $ node index.js
 
 ## Helpful Resources ##
 1. Regexr (http://regexr.com/)

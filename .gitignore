@@ -1,2 +1,4 @@
 .DS_Store
-geckodriver.log
+python_scrapper/geckodriver.log
+node_async/node_modules
+db/*

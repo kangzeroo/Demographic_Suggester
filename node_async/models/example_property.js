@@ -1,14 +1,12 @@
 
-def getDefault():
-    return default_leaseObj
-
-default_leaseObj = {
+modules.default_leaseObj = {
     "kijiji_link": "http://www.kijiji.ca/v-house-rental/kitchener-waterloo/waterloo-townhome-for-rent-laurelwood/1241107253?uli=true",
     "meta": {
         "active": True,       # if should be shown on map
         "claimed": False,     # if property has been claimed by a landlord
         "deleted": False      # if property was deleted
     },
+    "coords": [],
     "core": {
         "city": "",
         "property_type": "",
@@ -18,7 +16,6 @@ default_leaseObj = {
         "whole_price": 0,
         "address": "",
         "owner": "",
-        "coords": [],
         "place_id": ""
     },
     "rooms": [{
@@ -46,13 +43,14 @@ default_leaseObj = {
     "images": []
 }
 
-example_leaseObj = {
+modules.example_leaseObj = {
     "kijiji_link": "http://www.kijiji.ca/v-house-rental/kitchener-waterloo/waterloo-townhome-for-rent-laurelwood/1241107253?uli=true",
     "meta": {
         "active": True,       # if should be shown on map
         "claimed": False,     # if property has been claimed by a landlord
         "deleted": False      # if property was deleted
     },
+    "coords": [-34.345364, 80.435645],
     "core": {
         "city": "Toronto",
         "property_type": "House",
@@ -62,7 +60,6 @@ example_leaseObj = {
         "whole_price": 1500,
         "address": "571 Wild Iris Ave, Waterloo, ON N2V 2X5, Canada",
         "owner": "Private Landlord",
-        "coords": [-34.345364, 80.435645],
         "place_id": "FJFD9230Hk"
     },
     "rooms": [{
@@ -87,7 +84,9 @@ example_leaseObj = {
     },
     "demographics": ["young_residents", "high_income", "tag1", "tag2", "tagN"],
     "nearby": ["parks", "hospital", "metro"],
-    "images": [
-        "https://s3.amazonaws.com/rentburrow-images/ideas%2540bytenectar.io/default_home_icon.png"
-    ]
+    "images": [{
+      imageKey: "j8adlsfjlasdjflasjf",
+      thumbnailUrl: "https://s3.amazonaws.com/rentburrow-images/ideas%2540bytenectar.io/default_home_icon.png",
+      originalUrl: "https://s3.amazonaws.com/rentburrow-images/ideas%2540bytenectar.io/default_home_icon.png"
+    }]
 }
