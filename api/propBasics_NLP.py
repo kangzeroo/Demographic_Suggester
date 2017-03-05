@@ -14,33 +14,66 @@ def setAllUtils(leaseObj):
     leaseObj['utils_list']['internet'] = True
     return leaseObj
 
+# catch-all utilities incl
+# in order of broad-search first
 def getUtils(paragraph, leaseObj):
-    print(paragraph)
+
+    # amenities
     try:
-        # hydro_and_internet_incl = re.search(r'(hydro and internet included)|(hydro and internet incl)|(includes hydro and internet)', paragraph, re.I).group() # hydro and internet included
-        withSt = re.search(r'(with)', paragraph, re.I).group()
-        print(withSt)
+        hydro_and_internet_incl = re.search(r'(amenities incl)|(amenities included)|(all amenities)', paragraph, re.I).group()
+        print(hydro_and_internet_incl)
         leaseObj = setAllUtils(leaseObj)
     except:
-        print('NOT FOUND: No hydro_and_internet_incl found')
+        print('NOT FOUND ==> # amenities')
         pass
 
+    # all utilities
     try:
-        utils_incl_except_hydro = re.search(r'(yoyoyo)', paragraph, re.I).group() # utilities included, except hydro
-        print(utils_incl_except_hydro)
+        all_utilities = re.search(r'(all utilities)|(all utils)|(utilities included)|(utilities incl)|(utils incl)|(utils included)', paragraph, re.I).group()
+        print(all_utilities)
         leaseObj = setAllUtils(leaseObj)
-        leaseObj['utils_list']['electric'] = False
     except:
-        print('NOT FOUND: utils_incl_except_hydro')
+        print('NOT FOUND ==> # all utilities')
         pass
 
-    # amenities = re.search(r'', paragraph, re.I).group() # amenities
-    # all_utils = re.search(r'', paragraph, re.I).group() # all utilities
-    # all_incl = re.search(r'', paragraph, re.I).group() # all inclusive
-    # comma_incl = re.search(r'', paragraph, re.I).group() # water, electric, internet included
-    # plus_utils = re.search(r'(plus utilities)|(plus utils)', paragraph, re.I).group()   # plus utilities
-    # utils_incl = re.search(r'(utilities incl)|(utils incl)', paragraph, re.I).group()   # utilities included
+    # all inclusive
+    try:
+        all_inclusive = re.search(r'(all inclusive)|(all included)|(everything included)', paragraph, re.I).group()
+        print(hydro_and_internet_incl)
+        leaseObj = setAllUtils(leaseObj)
+        leaseOjb['utils_list']['furniture'] = True
+    except:
+        print('NOT FOUND ==> # all inclusive')
+        pass
 
+    # plus utilities
+    try:
+        hydro_and_internet_incl = re.search(r'(hydro and internet included)|(hydro and internet incl)|(includes hydro and internet)', paragraph, re.I).group()
+        print(hydro_and_internet_incl)
+        leaseObj = setAllUtils(leaseObj)
+    except:
+        print('NOT FOUND ==> # plus utilities')
+        pass
+
+    # utilities included
+    try:
+        hydro_and_internet_incl = re.search(r'(hydro and internet included)|(hydro and internet incl)|(includes hydro and internet)', paragraph, re.I).group()
+        print(hydro_and_internet_incl)
+        leaseObj = setAllUtils(leaseObj)
+    except:
+        print('NOT FOUND ==> # utilities included')
+        pass
+
+    # water, electric, internet included
+    try:
+        hydro_and_internet_incl = re.search(r'(hydro and internet included)|(hydro and internet incl)|(includes hydro and internet)', paragraph, re.I).group()
+        print(hydro_and_internet_incl)
+        leaseObj = setAllUtils(leaseObj)
+    except:
+        print('NOT FOUND ==> # water, electric, internet included')
+        pass
+
+    print("------------ next regex ------------")
     return leaseObj
 
 def getWater(paragraph, leaseObj):

@@ -4,11 +4,11 @@ import re
 def getPropBasics_Selenium(element, leaseObj):
     price = getPrice(element)
     bedrooms = getBedrooms(element)
-    leaseObj['posted_at'] = getDate(element)
-    leaseObj['whole_price'] = price
-    leaseObj['address'] = getAddressString(element)
-    leaseObj['company'] = getLandlord(element)
-    leaseObj['rooms'] = [{
+    leaseObj['core']['posted_at'] = getDate(element)
+    leaseObj['core']['whole_price'] = price
+    leaseObj['core']['address'] = getAddressString(element)
+    leaseObj['core']['company'] = getLandlord(element)
+    leaseObj['core']['rooms'] = [{
             'room_type': getPricePerRoom(price, bedrooms),
             'reg_price': 0,
     		'rooms_per': bedrooms,

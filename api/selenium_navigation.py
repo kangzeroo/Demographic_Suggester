@@ -23,14 +23,14 @@ def beginScript(driver, url, city, property_type):
         leaseObj = extractImages(page, leaseObj)
         leaseObj = getPropBasics_GPS(googleAPI, leaseObj)
 
-        leaseObj['city'] = city
-        leaseObj['company'] = "Private Landlord"
-        leaseObj['type'] = 'property_type'
-        leaseObj['active'] = True
-        leaseObj['claimed'] = False
-        leaseObj['deleted'] = False
-        leaseObj['thumbnail'] = 'https://s3.amazonaws.com/rentburrow-images/ideas%2540bytenectar.io/default_home_icon.png'
-        leaseObj['note'] = paragraph
+        leaseObj['kijiji_link'] = url
+        leaseObj['meta']['active'] = True
+        leaseObj['meta']['claimed'] = False
+        leaseObj['meta']['deleted'] = False
+        leaseObj['core']['city'] = city
+        leaseObj['core']['property_type'] = 'property_type'
+        leaseObj['core']['thumbnail'] = 'https://s3.amazonaws.com/rentburrow-images/ideas%2540bytenectar.io/default_home_icon.png'
+        leaseObj['core']['note'] = paragraph
         # print(leaseObj)
     except TimeoutException:
         print('TimeoutException')
