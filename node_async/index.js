@@ -13,7 +13,7 @@ const cors = require('cors');
 
 // Database setup
 // 'localhost:27017/database' will set up a db inside mongo called 'database'
-mongoose.connect('mongodb://localhost:27017/kijiji');
+mongoose.connect('mongodb://0.0.0.0:27017/kijiji');
 
 // App setup
 // morgan and bodyParser are middlewares. any incoming requests will be passed through each

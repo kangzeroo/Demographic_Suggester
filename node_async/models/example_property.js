@@ -2,9 +2,9 @@
 modules.default_leaseObj = {
     "kijiji_link": "http://www.kijiji.ca/v-house-rental/kitchener-waterloo/waterloo-townhome-for-rent-laurelwood/1241107253?uli=true",
     "meta": {
-        "active": True,       # if should be shown on map
-        "claimed": False,     # if property has been claimed by a landlord
-        "deleted": False      # if property was deleted
+        "active": true,
+        "claimed": false,
+        "deleted": false
     },
     "coords": [],
     "core": {
@@ -28,16 +28,16 @@ modules.default_leaseObj = {
         "room_desciptions": []
     }],
     "utils_list": {
-        "water": False,
-        "heat": False,
-        "electric": False,
-        "internet": False,
-        "furnished": False,
-        "parking": False,
-        "free_parking": False,
-        "ac": False,
-        "gym": False,
-        "laundry": False
+        "water": false,
+        "heat": false,
+        "electric": false,
+        "internet": false,
+        "furnished": false,
+        "parking": false,
+        "free_parking": false,
+        "ac": false,
+        "gym": false,
+        "laundry": false
     },
     "contacts": [{
       "name": "Owner",
@@ -52,9 +52,9 @@ modules.default_leaseObj = {
 modules.example_leaseObj = {
     "kijiji_link": "http://www.kijiji.ca/v-house-rental/kitchener-waterloo/waterloo-townhome-for-rent-laurelwood/1241107253?uli=true",
     "meta": {
-        "active": True,       # if should be shown on map
-        "claimed": False,     # if property has been claimed by a landlord
-        "deleted": False      # if property was deleted
+        "active": true,       # if should be shown on map
+        "claimed": false,     # if property has been claimed by a landlord
+        "deleted": false      # if property was deleted
     },
     "coords": [-34.345364, 80.435645],
     "core": {
@@ -78,16 +78,16 @@ modules.example_leaseObj = {
         "room_desciptions": ["generous"]
     }],
     "utils_list": {
-        "water": True,
-        "heat": True,
-        "electric": True,
-        "internet": True,
-        "furnished": True,
-        "parking": True,
-        "free_parking": False,
-        "ac": True,
-        "gym": False,
-        "laundry": True
+        "water": true,
+        "heat": true,
+        "electric": true,
+        "internet": true,
+        "furnished": true,
+        "parking": true,
+        "free_parking": false,
+        "ac": true,
+        "gym": false,
+        "laundry": true
     },
     "contacts": [{
       "name": "Owner",
