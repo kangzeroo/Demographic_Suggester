@@ -12,7 +12,7 @@ page = {}
 googleAPI = {}
 
 # takes 2 args, a driver instance and a query string
-def beginScript(driver, url, city, property_type):
+def buildLeaseObj(driver, url, city, property_type):
     driver.get(url)
     try:
         # get details from kijiji
@@ -40,5 +40,7 @@ def beginScript(driver, url, city, property_type):
         leaseObj['core']['thumbnail'] = 'https://s3.amazonaws.com/rentburrow-images/ideas%2540bytenectar.io/default_home_icon.png'
         leaseObj['core']['note'] = paragraph.replace('\"', '\'')
         print(leaseObj)
+        return leaseObj
     except TimeoutException:
         print('TimeoutException')
+        return {}
