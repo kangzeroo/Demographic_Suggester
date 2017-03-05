@@ -21,7 +21,8 @@ var PropertySchema = new mongoose.Schema({
       "whole_price": Number,
       "address": String,
       "owner": String,
-      "place_id": String
+      "place_id": String,
+      "kijiji_id": String
   },
   "rooms": [{
       "room_type": String,
@@ -45,6 +46,11 @@ var PropertySchema = new mongoose.Schema({
   },
   "demographics": [String],
   "nearby": [String],
+  "contacts": [{
+    "name": String,
+    "phone": String,
+    "email": String
+  }],
   "images": [{
     imageKey: String,
     thumbnailUrl: String,

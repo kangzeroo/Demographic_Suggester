@@ -16,7 +16,8 @@ modules.default_leaseObj = {
         "whole_price": 0,
         "address": "",
         "owner": "",
-        "place_id": ""
+        "place_id": "",
+        "kijiji_id": ""
     },
     "rooms": [{
         "room_type": "Avg Room",
@@ -38,6 +39,11 @@ modules.default_leaseObj = {
         "gym": False,
         "laundry": False
     },
+    "contacts": [{
+      "name": "Owner",
+      "phone": "",
+      "email": ""
+    }],
     "demographics": [],
     "nearby": [],
     "images": []
@@ -60,7 +66,8 @@ modules.example_leaseObj = {
         "whole_price": 1500,
         "address": "571 Wild Iris Ave, Waterloo, ON N2V 2X5, Canada",
         "owner": "Private Landlord",
-        "place_id": "FJFD9230Hk"
+        "place_id": "FJFD9230Hk",
+        "kijiji_id": "1241107253"
     },
     "rooms": [{
         "room_type": "Standard",
@@ -82,6 +89,11 @@ modules.example_leaseObj = {
         "gym": False,
         "laundry": True
     },
+    "contacts": [{
+      "name": "Owner",
+      "phone": "416-346-3267",
+      "email": "owner@email.com"
+    }],
     "demographics": ["young_residents", "high_income", "tag1", "tag2", "tagN"],
     "nearby": ["parks", "hospital", "metro"],
     "images": [{

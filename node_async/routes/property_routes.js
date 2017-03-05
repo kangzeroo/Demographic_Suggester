@@ -19,4 +19,9 @@ exports.parseAndSave = function(req, res, next){
 			console.log(err)
 			res.send.error(500)
 		})
-};
+}
+
+// POST /filter_query
+exports.filterQuery = function(req, res, next){
+	res.json({})
+}

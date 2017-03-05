@@ -2,3 +2,4 @@
 python_scrapper/geckodriver.log
 node_async/node_modules
 db/*
+client/App/node_modules
