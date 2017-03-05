@@ -6,6 +6,7 @@
   "repository": "",
   "scripts": {
     "start": "nodemon ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "forever": "export NODE_ENV=production; forever start --uid 'client_ms' ./node_modules/webpack-dev-server/bin/webpack-dev-server.js -- --host=0.0.0.0",
     "ec2": "nodemon ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
