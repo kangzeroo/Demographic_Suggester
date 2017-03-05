@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Radium from 'radium'
 import PopupQuery from './popup_query'
+import LiveProfile from './liveload_profile'
 
 class MapView extends Component {
 
@@ -108,6 +109,7 @@ class MapView extends Component {
       <div style={comStyles().container}>
 			   <div id="queryBox" style={comStyles().queryBox}>
             <PopupQuery />
+						<LiveProfile />
          </div>
 			   <div id="mapview" style={comStyles().mapview}></div>
       </div>
@@ -144,7 +146,9 @@ const comStyles = () => {
     queryBox: {
       zIndex: 10,
       position: 'absolute',
-      right: '10px'
+      right: '10px',
+			display: 'flex',
+			flexDirection: 'column'
     }
 	}
 }

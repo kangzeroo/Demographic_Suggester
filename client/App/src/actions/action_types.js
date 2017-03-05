@@ -12,3 +12,5 @@ export const TOGGLE_SIDEMENU = "TOGGLE_SIDEMENU"
 
 export const ADD_CONTENT = "ADD_CONTENT"
 export const SET_RESULTS = "SET_RESULTS"
+export const ADD_PROFILE_TAG = "ADD_PROFILE_TAG"
+export const UPDATE_DESC = "UPDATE_DESC"

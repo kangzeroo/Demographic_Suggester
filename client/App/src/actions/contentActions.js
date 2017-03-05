@@ -3,7 +3,7 @@
 // The Redux reducers (ie `../reducers/contentReducer.js`) will use actions to determine how they will calculate the next Redux state
 
 // We import ADD_CONTENT from `./action_types` for use inside these action creators
-import { ADD_CONTENT, SET_RESULTS } from './action_types'
+import { ADD_CONTENT, SET_RESULTS, ADD_PROFILE_TAG, UPDATE_DESC } from './action_types'
 
 // This action creator will be exported for use in <Home> and other components
 // When `addValueToContent()` is called, ADD_CONTENT action is dispatched to Redux reducers
@@ -26,4 +26,22 @@ export function setResultsFilteredFromKijiji(results){
         payload: results
       })
     }
+}
+
+export function updateProfileTagsFound(tags){
+  return function(dispatch){
+    dispatch({
+      type: ADD_PROFILE_TAG,
+      payload: tags
+    })
+  }
+}
+
+export function updateDesc(desc){
+  return function(dispatch){
+    dispatch({
+      type: UPDATE_DESC,
+      payload: desc
+    })
+  }
 }
