@@ -6,7 +6,7 @@
   "repository": "",
   "scripts": {
     "start": "nodemon ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "ec2": "PORT=36003 nodemon ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "ec2": "nodemon ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
@@ -29,6 +29,7 @@
   "dependencies": {
     "axios": "^0.15.2",
     "babel-preset-stage-1": "^6.1.18",
+    "forever": "^0.15.3",
     "lodash": "^3.10.1",
     "node-uuid": "^1.4.7",
     "nodemon": "^1.11.0",
