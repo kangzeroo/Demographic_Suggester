@@ -14,7 +14,7 @@ def beginScript(driver, url, city, property_type):
     driver.get(url)
     try:
         statsTable = driver.find_elements_by_xpath("//table[@class='ad-attributes']/tbody/tr")
-        paragraph = driver.find_element_by_xpath("//*[@id='UserContent']/table/tbody/tr/td/span")
+        paragraph = driver.find_element_by_xpath("//*[@id='UserContent']/table/tbody/tr/td/span").get_attribute('innerHTML')
 
         leaseObj = {}
         leaseObj = getPropBasics_Selenium(statsTable, leaseObj)
@@ -31,6 +31,6 @@ def beginScript(driver, url, city, property_type):
         leaseObj['deleted'] = False
         leaseObj['thumbnail'] = 'https://s3.amazonaws.com/rentburrow-images/ideas%2540bytenectar.io/default_home_icon.png'
         leaseObj['note'] = paragraph
-        print(leaseObj)
+        # print(leaseObj)
     except TimeoutException:
         print('TimeoutException')

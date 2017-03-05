@@ -5,22 +5,40 @@ def getPropBasics_NLP(paragraph, leaseObj):
     leaseObj = getUtils(paragraph, leaseObj)
     return leaseObj
 
+def setAllUtils(leaseObj):
+    # broad-first search
+    leaseObj['utils_list']['water'] = True
+    leaseObj['utils_list']['heat'] = True
+    leaseObj['utils_list']['electric'] = True
+    leaseObj['utils_list']['internet'] = True
+    return leaseObj
+
 def getUtils(paragraph, leaseObj):
-    # hydro_and_internet_incl = re.search(r'', paragraph, re.I).group() # hydro and internet included
-    # utils_incl_except_hydro = re.search(r'', paragraph, re.I).group() # utilities included, except hydro
+    print(paragraph)
+    try:
+        # hydro_and_internet_incl = re.search(r'(hydro and internet included)|(hydro and internet incl)|(includes hydro and internet)', paragraph, re.I).group() # hydro and internet included
+        withSt = re.search(r'(with)', paragraph, re.I).group()
+        print(withSt)
+        leaseObj = setAllUtils(leaseObj)
+    except:
+        print('NOT FOUND: No hydro_and_internet_incl found')
+        pass
+
+    try:
+        utils_incl_except_hydro = re.search(r'(yoyoyo)', paragraph, re.I).group() # utilities included, except hydro
+        print(utils_incl_except_hydro)
+        leaseObj = setAllUtils(leaseObj)
+        leaseObj['utils_list']['electric'] = False
+    except:
+        print('NOT FOUND: utils_incl_except_hydro')
+        pass
+
     # amenities = re.search(r'', paragraph, re.I).group() # amenities
     # all_utils = re.search(r'', paragraph, re.I).group() # all utilities
     # all_incl = re.search(r'', paragraph, re.I).group() # all inclusive
     # comma_incl = re.search(r'', paragraph, re.I).group() # water, electric, internet included
     # plus_utils = re.search(r'(plus utilities)|(plus utils)', paragraph, re.I).group()   # plus utilities
     # utils_incl = re.search(r'(utilities incl)|(utils incl)', paragraph, re.I).group()   # utilities included
-
-    # broad-first search
-
-    # leaseObj['utils_list']['water'] = True
-    # leaseObj['utils_list']['heat'] = True
-    # leaseObj['utils_list']['electric'] = True
-    # leaseObj['utils_list']['internet'] = True
 
     return leaseObj
 
