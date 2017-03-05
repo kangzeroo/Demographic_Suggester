@@ -3,8 +3,12 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException, ElementNotVisibleException
 
-from api.functions import getTableAttrs
-from api.nlp import getUtilsAttrs
+from api.selenium_navigation import beginScript
+from api.propBasics_Selenium import getPropBasics_Selenium
+from api.propBasics_NLP import getPropBasics_NLP
+from api.demographics import getDemographics
+from api.images import extractImages
+from api.propBasics_GPS import getPropBasics_GPS
 
 # creates the driver instance
 def init_driver():
@@ -14,7 +18,7 @@ def init_driver():
     return driver
 
 # takes 2 args, a driver instance and a query string
-def getPropertyDetails(driver, url, city, property_type):
+def buildProperty(driver, url, city, property_type):
     driver.get(url)
     try:
         tbody = driver.find_elements_by_xpath("//table[@class='ad-attributes']/tbody/tr")

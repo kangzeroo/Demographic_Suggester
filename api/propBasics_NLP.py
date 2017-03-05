@@ -1,6 +1,6 @@
 import re
 
-def getUtilsAttrs(paragraph, leaseObj):
+def getPropBasics_NLP(paragraph, leaseObj):
     leaseObj['utils_list'] = {}
     leaseObj = getUtils(paragraph, leaseObj)
 
@@ -89,6 +89,15 @@ def getLaundry(paragraph, leaseObj):
     # coin laundry
     # laundry onsite
     return leaseObj
+
+def getFurnished(element, leaseObj):
+    furnished = element[8].find_element_by_xpath("//*[@id='itemdetails']/div[2]/table/tbody/tr[9]/td").get_attribute('innerHTML')
+    matched_furnished = re.search(r'No|Yes', furnished).group()
+    print(matched_furnished)
+    if matched_furnished == 'Yes':
+        return True
+    else:
+        return False
 
 def getRoomInfo(paragraph, leaseObj):
     # spacious rooms

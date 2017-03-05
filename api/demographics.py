@@ -1,5 +1,6 @@
+def getDemographics():
+    return
 
-# walking distance
 
 def seniors():
     # quiet
@@ -46,9 +47,10 @@ def family():
 
 def hipYoungsters():
     # musical
-    #
+    # vibrant
 
 def generalDemands():
     # bus stops, subway, metro, public transportation
     # groceries
+    # walking distance
     # plaza

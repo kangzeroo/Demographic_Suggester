@@ -1,7 +1,7 @@
 from datetime import datetime
 import re
 
-def getTableAttrs(element, leaseObj):
+def getPropBasics_Selenium(element, leaseObj):
     price = getPrice(element)
     bedrooms = getBedrooms(element)
     leaseObj['posted_at'] = getDate(element)
@@ -52,14 +52,6 @@ def getLandlord(element):
     landlord = element[5].find_element_by_xpath("//*[@id="itemdetails"]/div[2]/table/tbody/tr[8]/td").get_attribute('innerHTML')
     return landlord
 
-def getFurnished(element):
-    furnished = element[8].find_element_by_xpath("//*[@id='itemdetails']/div[2]/table/tbody/tr[9]/td").get_attribute('innerHTML')
-    matched_furnished = re.search(r'No|Yes', furnished).group()
-    print(matched_furnished)
-    if matched_furnished == 'Yes':
-        return True
-    else:
-        return False
 
 def getPricePerRoom(price, bedrooms):
     perRoom = price/bedrooms

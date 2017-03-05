@@ -1,0 +1,1 @@
+def getPropBasics_GPS():
