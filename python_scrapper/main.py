@@ -17,10 +17,12 @@ def init_driver():
 # if we imported this script, then __name__ != __main__
 if __name__ == "__main__":
     driver = init_driver()
+    # urls = [
+    #     'http://www.kijiji.ca/v-house-rental/city-of-toronto/danforth-woodbine-entire-detached-house-for-rent/1243834480',
+    #     'http://www.kijiji.ca/v-house-rental/city-of-toronto/3-bedroom-townhouse-in-the-junction/1244219311?enableSearchNavigationFlag=true',
+    #     'http://www.kijiji.ca/v-house-rental/city-of-toronto/newly-renovated-3-br-home-in-queen-west-main-second-floor/1244200671?enableSearchNavigationFlag=true'
+    # ]
     urls = [
-        'http://www.kijiji.ca/v-house-rental/city-of-toronto/danforth-woodbine-entire-detached-house-for-rent/1243834480',
-        'http://www.kijiji.ca/v-house-rental/city-of-toronto/3-bedroom-townhouse-in-the-junction/1244219311?enableSearchNavigationFlag=true',
-        'http://www.kijiji.ca/v-house-rental/city-of-toronto/newly-renovated-3-br-home-in-queen-west-main-second-floor/1244200671?enableSearchNavigationFlag=true',
         'http://www.kijiji.ca/v-house-rental/city-of-toronto/2-bedrooms-townhouse-for-rent-toronto/1244180860?enableSearchNavigationFlag=true',
         'http://www.kijiji.ca/v-house-rental/city-of-toronto/house-near-kennedy-subway-station/1244203290?enableSearchNavigationFlag=true',
         'http://www.kijiji.ca/v-house-rental/city-of-toronto/beautiful-2-br-2wr-1pk-condo-facing-south-east/1242258625',

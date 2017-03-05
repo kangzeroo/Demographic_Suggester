@@ -3,6 +3,17 @@ import re
 def getPropBasics_NLP(paragraph, leaseObj):
     leaseObj = getUtils(paragraph, leaseObj)
     leaseObj = getWater(paragraph, leaseObj)
+    leaseObj = getHeat(paragraph, leaseObj)
+    leaseObj = getElectric(paragraph, leaseObj)
+    leaseObj = getFurnished(paragraph, leaseObj)
+    leaseObj = getParking(paragraph, leaseObj)
+    leaseObj = getFreeParking(paragraph, leaseObj)
+    leaseObj = getInternet(paragraph, leaseObj)
+    leaseObj = getAc(paragraph, leaseObj)
+    leaseObj = getGym(paragraph, leaseObj)
+    leaseObj = getLaundry(paragraph, leaseObj)
+    leaseObj = getFurnished(paragraph, leaseObj)
+    leaseObj = getRoomInfo(paragraph, leaseObj)
     return leaseObj
 
 def setAllUtils(leaseObj):
@@ -76,27 +87,58 @@ def getUtils(paragraph, leaseObj):
     return leaseObj
 
 def getWater(paragraph, leaseObj):
-    if leaseObj['utils_list']['water'] == True:
-        water_extra = re.search(r'', paragraph, re.I).group() # water extra, not included
+   if leaseObj['utils_list']['water'] == True:
+        # water extra, not included
+        try:
+            water_extra = re.search(r'(water extra, not included)|(water not included)', paragraph, re.I).group() # water extra, not included
+            print(water_extra)
+        except:
+            print("NOT FOUND ==> # water extra, not include")
+            pass
         return leaseObj
     else:
-        water_incl = re.search(r'', paragraph, re.I).group() # water incl
+        try:
+            water_incl = re.search(r'(water included)', paragraph, re.I).group() # water incl
+            print(water_incl)
+        except:
+            print ("NOT FOUND ==> water included")
         return leaseObj
 
 def getHeat(paragraph, leaseObj):
     if leaseObj['utils_list']['heat'] == True:
-        heat_extra = re.search(r'', paragraph, re.I).group()    # heat extra, heating not incl
-        gas_extra = re.search(r'', paragraph, re.I).group()     # gas extra, gas not incl
+        # heat extra, heating not incl
+        try:
+            heat_extra = re.search(r'(heat extra, not included)|(heat not included)', paragraph, re.I).group()
+            print(heat_extra)
+        except:
+            print("NOT FOUND ==> # heat extra, not included")
+        # gas extra, gas not incl
+        try:
+            gas_extra = re.search(r'(gas extra, not included)|(gas not included)', paragraph, re.I).group()
         return leaseObj
     else:
-        gas_incl = re.search(r'', paragraph, re.I).group()   # gas incl
-        heating_incl = re.search(r'', paragraph, re.I).group()   # heating incl
+        # gas incl
+        try:
+            gas_incl = re.search(r'(gas included)', paragraph, re.I).group()
+        except:
+            print("NOT FOUND ==> # gas included")
+        # heating incl
+        try:
+            heating_incl = re.search(r'(heating included)', paragraph, re.I).group()
+        except:
+            print("NOT FOUND ==> # heat included")
         return leaseObj
 
 def getElectric(paragraph, leaseObj):
     if leaseObj['utils_list']['electric'] == True:
-        hydro_extra = re.search(r'', paragraph, re.I).group() # hydro extra, not included
-        electric_extra = re.search(r'', paragraph, re.I).group() # electricity, electric not included
+        # hydro extra, not included
+        try:
+            hydro_extra = re.search(r'(hydro is extra, not included)| (extra hydro, not included)', paragraph, re.I).group()
+        except:
+            print("NOT FOUND ==> # extra hydro")
+        # electricity, electric not included
+        try:
+            electric_extra = re.search(r'(electric is extra, not included)|(extra electrical, not included)', paragraph, re.I).group()
         return leaseObj
     else:
         elec_incl = re.search(r'', paragraph, re.I).group() # electric incl
