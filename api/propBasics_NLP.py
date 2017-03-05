@@ -3,6 +3,7 @@ import re
 def getPropBasics_NLP(paragraph, leaseObj):
     leaseObj['utils_list'] = {}
     leaseObj = getUtils(paragraph, leaseObj)
+    leaseObj = getWater(paragraph, leaseObj)
     return leaseObj
 
 def setAllUtils(leaseObj):
