@@ -2,7 +2,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 
-from api.selenium_navigation import beginScript
+from api.script_order import beginScript
 
 
 # creates the driver instance

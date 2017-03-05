@@ -1,7 +1,6 @@
 import re
 
 def getPropBasics_NLP(paragraph, leaseObj):
-    leaseObj['utils_list'] = {}
     leaseObj = getUtils(paragraph, leaseObj)
     leaseObj = getWater(paragraph, leaseObj)
     return leaseObj
@@ -156,6 +155,7 @@ def getRoomInfo(paragraph, leaseObj):
     # spacious rooms
     # cozy rooms
     # big rooms, large rooms
+    leaseObj['rooms']['room_desciptions'] = []
     return leaseObj
 
 

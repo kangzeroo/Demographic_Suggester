@@ -1,8 +1,10 @@
 def getDemographics(paragraph, leaseObj):
+    leaseObj['demographics'] = []
     return leaseObj
 
 
 def seniors(paragraph, leaseObj):
+    leaseObj['demographics'].append()
     return leaseObj
     # quiet
     # family
