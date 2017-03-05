@@ -3,6 +3,7 @@ import re
 def getPropBasics_NLP(paragraph, leaseObj):
     leaseObj['utils_list'] = {}
     leaseObj = getUtils(paragraph, leaseObj)
+    return leaseObj
 
 def getUtils(paragraph, leaseObj):
     hydro_and_internet_incl = re.search(r'', paragraph, re.I).group() # hydro and internet included

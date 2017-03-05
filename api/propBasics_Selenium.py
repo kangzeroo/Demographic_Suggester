@@ -49,7 +49,7 @@ def getBathrooms(element):
     return intBathrooms
 
 def getLandlord(element):
-    landlord = element[5].find_element_by_xpath("//*[@id="itemdetails"]/div[2]/table/tbody/tr[8]/td").get_attribute('innerHTML')
+    landlord = element[5].find_element_by_xpath("//*[@id='itemdetails']/div[2]/table/tbody/tr[8]/td").get_attribute('innerHTML')
     return landlord
 
 

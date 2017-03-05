@@ -1,8 +1,9 @@
-def getDemographics():
-    return
+def getDemographics(paragraph, leaseObj):
+    return leaseObj
 
 
-def seniors():
+def seniors(paragraph, leaseObj):
+    return leaseObj
     # quiet
     # family
     # safe
@@ -10,13 +11,15 @@ def seniors():
     # parks nearby
     # gated
 
-def collegeStudents():
+def collegeStudents(paragraph, leaseObj):
+    return leaseObj
     # bus stops, subway, metro, public transportation
     # close to library
     # campus
     # parks
 
-def youngProfessionals():
+def youngProfessionals(paragraph, leaseObj):
+    return leaseObj
     # public
     # bustling
     # busy
@@ -30,26 +33,32 @@ def youngProfessionals():
     # flourishing
     # developing
 
-def impoverishedImmigrants():
+def impoverishedImmigrants(paragraph, leaseObj):
+    return leaseObj
     # low cost
     # ethnic
 
-def investorImmigrants():
+def investorImmigrants(paragraph, leaseObj):
+    return leaseObj
     # high end
     # uptown
 
-def youngCouples():
+def youngCouples(paragraph, leaseObj):
+    return leaseObj
     # youngProfessionals
 
-def family():
+def family(paragraph, leaseObj):
+    return leaseObj
     # family friendly
     #
 
-def hipYoungsters():
+def hipYoungsters(paragraph, leaseObj):
+    return leaseObj
     # musical
     # vibrant
 
-def generalDemands():
+def generalDemands(paragraph, leaseObj):
+    return leaseObj
     # bus stops, subway, metro, public transportation
     # groceries
     # walking distance

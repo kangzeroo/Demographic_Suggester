@@ -1,7 +1,6 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.common.exceptions import TimeoutException, ElementNotVisibleException
 
 from api.selenium_navigation import beginScript
 
