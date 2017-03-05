@@ -24,7 +24,7 @@ export default function(state = INITIAL_STATE, action){
 		case SET_RESULTS:
 			return {
 				...state,
-				results: state.results.concat([action.payload])
+				results: action.payload
 			}
 	}
 	// for all uncaught `action.type`, just return the state

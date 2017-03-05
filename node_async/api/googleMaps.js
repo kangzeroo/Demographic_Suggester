@@ -24,7 +24,7 @@ exports.parseGPS = function(leaseObj){
         console.log(result)
 		  	if(result.results[0]){
 			  	// take the coords of the first result
-			  	leaseObj.core.coords = [parseFloat(result.results[0].geometry.location.lng.toFixed(7)), parseFloat(result.results[0].geometry.location.lat.toFixed(7))];
+			  	leaseObj.coords = [parseFloat(result.results[0].geometry.location.lng.toFixed(7)), parseFloat(result.results[0].geometry.location.lat.toFixed(7))];
 					leaseObj.core.place_id = result.results[0].place_id
 			  	res(leaseObj);
 			}else{

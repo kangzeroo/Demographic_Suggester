@@ -25,10 +25,8 @@ class MapView extends Component {
 	}
 
 	componentDidUpdate(){
-		if(this.props.selectedPins){
-			this.recolorRed()
-		  this.refreshPins(this.props.results)
-		}
+		this.recolorRed()
+	  this.refreshPins(this.props.results)
 	}
 
 	mountGoogleMap(){
@@ -66,12 +64,9 @@ class MapView extends Component {
       marker.cardId = n._id
     // action on click of pin
     google.maps.event.addListener(marker, 'click', function(e){
-  		if(n.company){
-  			type = 'LEASE'
-  		}else{
-  			type = 'SUBLET'
-  		}
-    });
+			const win = window.open(n.kijiji_link, '_blank');
+  		win.focus();
+    })
     self.pins.push(marker)
   })
   self.pins.forEach((pin, index)=>{

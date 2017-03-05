@@ -44,7 +44,7 @@ export function getFilteredResults(query){
     axios.post('http://localhost:7201/filter_query', {query})
       .then((data)=>{
         console.log(data)
-        res(data)
+        res(data.data)
       })
   })
   return p

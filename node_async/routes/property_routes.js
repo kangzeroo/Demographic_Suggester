@@ -23,5 +23,14 @@ exports.parseAndSave = function(req, res, next){
 
 // POST /filter_query
 exports.filterQuery = function(req, res, next){
-	res.json({})
+	Property.find({}, function(err, props){
+		if(err){console.log(err)};
+		//console.log(leases);
+		// return the matching Leases
+		if(props.length > 0){
+			res.json(props);
+		}else{
+			res.json([]);
+		}
+	})
 }
